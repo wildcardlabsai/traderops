@@ -17,7 +17,7 @@ const Solution = () => {
             TraderOps <span className="text-primary glow-text">fixes that</span>
           </h2>
         </div>
-        <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {features.map((f, i) => (
             <div
               key={i}

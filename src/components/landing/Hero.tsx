@@ -22,7 +22,7 @@ const Hero = () => {
           <span className="text-sm font-body text-primary">Built for the motor trade</span>
         </div>
 
-        <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight max-w-5xl mx-auto mb-6 opacity-0 animate-fade-in-delay-1">
+        <h1 className="font-display text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight max-w-5xl mx-auto mb-6 opacity-0 animate-fade-in-delay-1">
           Built for Dealers Who{" "}
           <span className="text-primary glow-text">Trade</span>, Not Retail
         </h1>
