@@ -5,6 +5,16 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import AppLayout from "./components/app/AppLayout.tsx";
+import Dashboard from "./pages/app/Dashboard.tsx";
+import Stock from "./pages/app/Stock.tsx";
+import Marketplace from "./pages/app/Marketplace.tsx";
+import Wanted from "./pages/app/Wanted.tsx";
+import Deals from "./pages/app/Deals.tsx";
+import Contacts from "./pages/app/Contacts.tsx";
+import Movements from "./pages/app/Movements.tsx";
+import Documents from "./pages/app/Documents.tsx";
+import Alerts from "./pages/app/Alerts.tsx";
 
 const queryClient = new QueryClient();
 
@@ -16,7 +26,17 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/app" element={<AppLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="stock" element={<Stock />} />
+            <Route path="marketplace" element={<Marketplace />} />
+            <Route path="wanted" element={<Wanted />} />
+            <Route path="deals" element={<Deals />} />
+            <Route path="contacts" element={<Contacts />} />
+            <Route path="movements" element={<Movements />} />
+            <Route path="documents" element={<Documents />} />
+            <Route path="alerts" element={<Alerts />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
