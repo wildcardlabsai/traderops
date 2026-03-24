@@ -47,7 +47,7 @@ const showcases = [
           <div key={stage.label} className="flex-1 text-center">
             <div className={`h-2 rounded-full ${stage.color} mb-2`} />
             <span className="text-[10px] font-body text-muted-foreground">{stage.label}</span>
-            <div className="font-display text-sm font-bold text-foreground">{stage.count}</div>
+            <div className="font-display text-2xl text-foreground">{stage.count}</div>
           </div>
         ))}
       </div>
@@ -101,10 +101,10 @@ const FeatureShowcase = () => {
     <section className="py-20 md:py-32 relative bg-muted/30">
       <div className="container relative px-4">
         <div className="text-center mb-14 md:mb-20 max-w-2xl mx-auto">
-          <p className="text-primary font-display font-semibold text-sm tracking-[0.15em] uppercase mb-3">How it works</p>
-          <h2 className="font-display text-3xl md:text-5xl font-bold leading-tight">
-            Everything you need,{" "}
-            <span className="text-gradient">nothing you don't</span>
+          <p className="text-primary font-body font-semibold text-xs tracking-[0.2em] uppercase mb-4">How It Works</p>
+          <h2 className="font-display text-4xl md:text-7xl uppercase leading-[0.95] tracking-tight">
+            Everything You Need,{" "}
+            <span className="text-gradient">Nothing You Don't</span>
           </h2>
         </div>
         <div className="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto">
@@ -120,13 +120,13 @@ const FeatureShowcase = () => {
                 <div className="flex gap-5">
                   {item.stats.map((s, j) => (
                     <div key={j} className="text-right">
-                      <div className="font-display text-xl font-bold text-foreground">{s.value}</div>
+                      <div className="font-display text-3xl text-foreground">{s.value}</div>
                       <div className="text-[11px] text-muted-foreground font-body">{s.label}</div>
                     </div>
                   ))}
                 </div>
               </div>
-              <h3 className="font-display text-xl font-semibold text-foreground mb-1.5">{item.title}</h3>
+              <h3 className="font-display text-3xl uppercase tracking-wide text-foreground mb-1.5">{item.title}</h3>
               <p className="font-body text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
               {item.miniUI}
             </div>

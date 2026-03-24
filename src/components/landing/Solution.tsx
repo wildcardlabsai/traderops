@@ -13,9 +13,10 @@ const Solution = () => {
     <section id="features" className="py-20 md:py-32 relative">
       <div className="container relative px-4">
         <div className="text-center mb-14 md:mb-20 max-w-2xl mx-auto">
-          <p className="text-primary font-display font-semibold text-sm tracking-[0.15em] uppercase mb-3">The solution</p>
-          <h2 className="font-display text-3xl md:text-5xl font-bold leading-tight">
-            One platform. <span className="text-gradient">Everything you need.</span>
+          <p className="text-primary font-body font-semibold text-xs tracking-[0.2em] uppercase mb-4">The Solution</p>
+          <h2 className="font-display text-4xl md:text-7xl uppercase leading-[0.95] tracking-tight">
+            One Platform.{" "}
+            <span className="text-gradient">Everything You Need.</span>
           </h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
@@ -29,7 +30,7 @@ const Solution = () => {
               <div className="w-12 h-12 rounded-xl bg-primary/8 flex items-center justify-center mb-5 group-hover:bg-primary/12 transition-colors">
                 <f.icon className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="font-display font-semibold text-foreground text-lg mb-2">{f.title}</h3>
+              <h3 className="font-display text-2xl uppercase tracking-wide text-foreground mb-2">{f.title}</h3>
               <p className="font-body text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
             </div>
           ))}
