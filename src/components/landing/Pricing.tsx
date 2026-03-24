@@ -26,20 +26,21 @@ const Pricing = () => {
     <section id="pricing" className="py-20 md:py-32 relative bg-muted/30">
       <div className="container relative px-4">
         <div className="text-center mb-14 md:mb-20 max-w-2xl mx-auto">
-          <p className="text-primary font-display font-semibold text-sm tracking-[0.15em] uppercase mb-3">Pricing</p>
-          <h2 className="font-display text-3xl md:text-5xl font-bold leading-tight">
-            Simple pricing. <span className="text-gradient">No nonsense.</span>
+          <p className="text-primary font-body font-semibold text-xs tracking-[0.2em] uppercase mb-4">Pricing</p>
+          <h2 className="font-display text-4xl md:text-7xl uppercase leading-[0.95] tracking-tight">
+            Simple Pricing.{" "}
+            <span className="text-gradient">No Nonsense.</span>
           </h2>
         </div>
 
         <div className="max-w-md mx-auto mb-20">
           <div className="relative rounded-2xl border-2 border-primary/20 bg-background p-8 md:p-10 shadow-lg shadow-primary/5">
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-5 py-1.5 rounded-full gradient-primary text-primary-foreground text-xs font-display font-semibold tracking-wide">
+            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-5 py-1.5 rounded-full gradient-primary text-primary-foreground text-xs font-body font-semibold uppercase tracking-wider">
               14-day free trial
             </div>
             <div className="text-center mb-8 pt-4">
               <div className="flex items-baseline justify-center gap-1">
-                <span className="font-display text-6xl font-extrabold text-foreground">£50</span>
+                <span className="font-display text-7xl text-foreground">£50</span>
                 <span className="text-muted-foreground font-body text-lg">/month</span>
               </div>
               <p className="text-muted-foreground font-body mt-2">per dealership · everything included</p>
@@ -55,9 +56,9 @@ const Pricing = () => {
               ))}
             </div>
             <Link to="/signup">
-              <Button className="w-full h-13 gradient-primary text-primary-foreground font-display font-semibold text-base hover:opacity-90 transition-opacity rounded-xl">
+              <Button className="w-full h-14 gradient-primary text-primary-foreground font-display text-xl uppercase tracking-wider hover:opacity-90 transition-opacity rounded-xl">
                 Start Free Trial
-                <ArrowRight className="w-4 h-4 ml-2" />
+                <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
             <p className="text-center font-body text-xs text-muted-foreground mt-4">No credit card required</p>
@@ -66,11 +67,11 @@ const Pricing = () => {
 
         {/* FAQ */}
         <div className="max-w-2xl mx-auto">
-          <h3 className="font-display text-2xl font-bold text-foreground text-center mb-8">Frequently asked questions</h3>
+          <h3 className="font-display text-3xl uppercase tracking-wide text-foreground text-center mb-8">Frequently Asked Questions</h3>
           <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`} className="rounded-xl bg-background border border-border px-6">
-                <AccordionTrigger className="font-display font-semibold text-foreground text-sm hover:no-underline py-5">
+                <AccordionTrigger className="font-body font-semibold text-foreground text-sm hover:no-underline py-5">
                   {faq.q}
                 </AccordionTrigger>
                 <AccordionContent className="font-body text-muted-foreground text-sm pb-5 leading-relaxed">

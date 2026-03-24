@@ -11,9 +11,10 @@ const SocialProof = () => {
     <section className="py-20 md:py-32 relative">
       <div className="container relative px-4">
         <div className="text-center mb-14 md:mb-20 max-w-2xl mx-auto">
-          <p className="text-primary font-display font-semibold text-sm tracking-[0.15em] uppercase mb-3">Testimonials</p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight">
-            Built by dealers, <span className="text-gradient">for dealers</span>
+          <p className="text-primary font-body font-semibold text-xs tracking-[0.2em] uppercase mb-4">Testimonials</p>
+          <h2 className="font-display text-4xl md:text-6xl uppercase leading-[0.95] tracking-tight">
+            Built By Dealers,{" "}
+            <span className="text-gradient">For Dealers</span>
           </h2>
         </div>
         <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
@@ -23,10 +24,10 @@ const SocialProof = () => {
               <p className="font-body text-foreground mb-6 leading-relaxed">"{t.text}"</p>
               <div className="flex items-center gap-3 pt-4 border-t border-border">
                 <div className="w-10 h-10 rounded-full bg-primary/8 flex items-center justify-center flex-shrink-0">
-                  <span className="font-display text-xs font-bold text-primary">{t.initials}</span>
+                  <span className="font-display text-base text-primary">{t.initials}</span>
                 </div>
                 <div>
-                  <div className="font-display font-semibold text-foreground text-sm">{t.name}</div>
+                  <div className="font-body font-semibold text-foreground text-sm">{t.name}</div>
                   <div className="font-body text-xs text-muted-foreground">{t.role}</div>
                 </div>
               </div>

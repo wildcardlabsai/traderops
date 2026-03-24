@@ -24,10 +24,10 @@ const Problem = () => {
     <section className="py-20 md:py-32 relative bg-muted/40">
       <div className="container relative px-4">
         <div className="max-w-2xl mb-12 md:mb-16">
-          <p className="text-destructive font-display font-semibold text-sm tracking-[0.15em] uppercase mb-3">The problem</p>
-          <h2 className="font-display text-3xl md:text-5xl font-bold leading-tight">
-            Most dealer tools aren't built for how you{" "}
-            <span className="text-destructive">actually work</span>
+          <p className="text-destructive font-body font-semibold text-xs tracking-[0.2em] uppercase mb-4">The Problem</p>
+          <h2 className="font-display text-4xl md:text-6xl uppercase leading-[0.95] tracking-tight">
+            Most Dealer Tools Aren't Built For How You{" "}
+            <span className="text-destructive">Actually Work</span>
           </h2>
         </div>
         <div className="grid sm:grid-cols-2 gap-4 max-w-4xl">
@@ -40,7 +40,7 @@ const Problem = () => {
                 <X className="w-4 h-4 text-destructive" />
               </div>
               <div>
-                <h3 className="font-display font-semibold text-foreground mb-1.5">{problem.title}</h3>
+                <h3 className="font-display text-2xl uppercase tracking-wide text-foreground mb-1.5">{problem.title}</h3>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed">{problem.desc}</p>
               </div>
             </div>

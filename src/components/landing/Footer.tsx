@@ -8,10 +8,14 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="h-8 w-8 rounded-lg gradient-primary flex items-center justify-center font-display font-bold text-primary-foreground text-xs">
-                TO
+              <div className="h-9 w-9 rounded-lg gradient-primary flex items-center justify-center">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 17h14M5 17a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1l2-3h8l2 3h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2M5 17v2m14-2v2" />
+                  <circle cx="7.5" cy="14.5" r="1.5" />
+                  <circle cx="16.5" cy="14.5" r="1.5" />
+                </svg>
               </div>
-              <span className="font-display font-bold text-foreground text-lg">TraderOps</span>
+              <span className="font-display text-2xl uppercase tracking-wider text-foreground">TraderOps</span>
             </div>
             <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-xs">
               The platform built for trade-only car dealers. Move stock faster, source smarter.
@@ -20,7 +24,7 @@ const Footer = () => {
 
           {/* Product */}
           <div>
-            <h4 className="font-display font-semibold text-foreground text-sm mb-5">Product</h4>
+            <h4 className="font-display text-xl uppercase tracking-wider text-foreground mb-5">Product</h4>
             <ul className="space-y-3 font-body text-sm text-muted-foreground">
               <li><a href="#features" className="hover:text-foreground transition-colors">Features</a></li>
               <li><a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a></li>
@@ -31,7 +35,7 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h4 className="font-display font-semibold text-foreground text-sm mb-5">Company</h4>
+            <h4 className="font-display text-xl uppercase tracking-wider text-foreground mb-5">Company</h4>
             <ul className="space-y-3 font-body text-sm text-muted-foreground">
               <li><a href="#" className="hover:text-foreground transition-colors">About</a></li>
               <li><a href="mailto:hello@traderops.co.uk" className="hover:text-foreground transition-colors">Contact</a></li>
@@ -41,7 +45,7 @@ const Footer = () => {
 
           {/* Legal */}
           <div>
-            <h4 className="font-display font-semibold text-foreground text-sm mb-5">Legal</h4>
+            <h4 className="font-display text-xl uppercase tracking-wider text-foreground mb-5">Legal</h4>
             <ul className="space-y-3 font-body text-sm text-muted-foreground">
               <li><a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a></li>
               <li><a href="#" className="hover:text-foreground transition-colors">Terms of Service</a></li>
