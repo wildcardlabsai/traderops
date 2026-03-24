@@ -58,6 +58,13 @@ const Hero = () => {
           <span className="flex items-center gap-1.5"><span className="text-success">✓</span> No credit card</span>
           <span className="flex items-center gap-1.5"><span className="text-success">✓</span> Cancel anytime</span>
         </div>
+
+        {/* App preview */}
+        <div className="mt-16 md:mt-20 opacity-0 animate-fade-in-delay-3" style={{ perspective: "1200px" }}>
+          <div className="transform md:rotate-x-1 transition-transform duration-500 hover:rotate-x-0">
+            <AppPreview />
+          </div>
+        </div>
       </div>
 
       {/* Scroll indicator */}
