@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/contexts/AuthContext";
 import ProtectedRoute from "@/components/ProtectedRoute";
+import AdminProtectedRoute from "@/components/AdminProtectedRoute";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Login from "./pages/Login.tsx";
@@ -22,6 +23,14 @@ import Movements from "./pages/app/Movements.tsx";
 import Documents from "./pages/app/Documents.tsx";
 import Alerts from "./pages/app/Alerts.tsx";
 import Settings from "./pages/app/Settings.tsx";
+import AdminLayout from "./components/admin/AdminLayout.tsx";
+import AdminOverview from "./pages/admin/Overview.tsx";
+import AdminDealers from "./pages/admin/Dealers.tsx";
+import AdminAnalytics from "./pages/admin/Analytics.tsx";
+import AdminAnnouncements from "./pages/admin/Announcements.tsx";
+import AdminSupport from "./pages/admin/Support.tsx";
+import AdminBilling from "./pages/admin/Billing.tsx";
+import AdminSettings from "./pages/admin/Settings.tsx";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +58,15 @@ const App = () => (
               <Route path="documents" element={<Documents />} />
               <Route path="alerts" element={<Alerts />} />
               <Route path="settings" element={<Settings />} />
+            </Route>
+            <Route path="/admin" element={<AdminProtectedRoute><AdminLayout /></AdminProtectedRoute>}>
+              <Route index element={<AdminOverview />} />
+              <Route path="dealers" element={<AdminDealers />} />
+              <Route path="analytics" element={<AdminAnalytics />} />
+              <Route path="announcements" element={<AdminAnnouncements />} />
+              <Route path="support" element={<AdminSupport />} />
+              <Route path="billing" element={<AdminBilling />} />
+              <Route path="settings" element={<AdminSettings />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
