@@ -32,7 +32,7 @@ const Pricing = () => {
         </div>
 
         <div className="max-w-md mx-auto mb-16">
-          <div className="relative rounded-2xl border border-primary/30 bg-card p-8 glow-border">
+          <div className="relative rounded-2xl border border-primary/30 bg-card p-8 glow-border animate-[pulse-glow_4s_ease-in-out_infinite]" style={{ animationDuration: '4s' }}>
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full gradient-primary text-primary-foreground text-xs font-display font-semibold">
               14-day free trial
             </div>
@@ -79,6 +79,7 @@ const Pricing = () => {
           </Accordion>
         </div>
       </div>
+      <div className="section-divider mt-24 mx-auto max-w-2xl" />
     </section>
   );
 };
