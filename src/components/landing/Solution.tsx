@@ -1,38 +1,40 @@
 import { Package, Users, GitBranch, Search, Truck } from "lucide-react";
 
 const features = [
-  { icon: Package, title: "Trade Stock Management", desc: "Track every vehicle with pricing, margins, and status in one place." },
-  { icon: Users, title: "Private Dealer Network", desc: "Connect directly with trusted buyers and suppliers." },
-  { icon: GitBranch, title: "Deal Tracking Pipeline", desc: "Follow every deal from enquiry to completion." },
-  { icon: Search, title: "Wanted Stock Matching", desc: "Post what you need. Get matched instantly." },
-  { icon: Truck, title: "Vehicle Movement Tracking", desc: "Full lifecycle from purchase to delivery." },
+  { icon: Package, title: "Stock Management", desc: "Track every vehicle with pricing, margins, and status in one place." },
+  { icon: Users, title: "Dealer Network", desc: "Connect directly with trusted buyers and suppliers." },
+  { icon: GitBranch, title: "Deal Pipeline", desc: "Follow every deal from enquiry to completion." },
+  { icon: Search, title: "Wanted Matching", desc: "Post what you need. Get matched instantly." },
+  { icon: Truck, title: "Movement Tracking", desc: "Full lifecycle from purchase to delivery." },
 ];
 
 const Solution = () => {
   return (
-    <section id="features" className="py-24 relative">
-      <div className="container relative">
-        <div className="text-center mb-16">
-          <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
-            TraderOps <span className="text-primary glow-text">fixes that</span>
+    <section id="features" className="py-20 md:py-32 relative">
+      <div className="container relative px-4">
+        <div className="text-center mb-14 md:mb-20 max-w-2xl mx-auto">
+          <p className="text-primary font-display font-semibold text-sm tracking-[0.15em] uppercase mb-3">The solution</p>
+          <h2 className="font-display text-3xl md:text-5xl font-bold leading-tight">
+            One platform. <span className="text-gradient">Everything you need.</span>
           </h2>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
           {features.map((f, i) => (
             <div
               key={i}
-              className={`group p-6 rounded-xl bg-card border border-border/50 hover:border-primary/40 card-lift hover:glow-border ${i === 4 ? "col-span-2 sm:col-span-2 md:col-span-1 lg:col-span-1" : ""}`}
+              className={`group p-7 rounded-2xl bg-card border border-border hover:border-primary/30 card-lift ${
+                i >= 3 ? "sm:col-span-1 lg:col-span-1" : ""
+              } ${i === 3 ? "lg:translate-x-[50%]" : ""} ${i === 4 ? "lg:translate-x-[50%]" : ""}`}
             >
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                <f.icon className="w-5 h-5 text-primary" />
+              <div className="w-12 h-12 rounded-xl bg-primary/8 flex items-center justify-center mb-5 group-hover:bg-primary/12 transition-colors">
+                <f.icon className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="font-display font-semibold text-foreground mb-2">{f.title}</h3>
-              <p className="font-body text-sm text-muted-foreground">{f.desc}</p>
+              <h3 className="font-display font-semibold text-foreground text-lg mb-2">{f.title}</h3>
+              <p className="font-body text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
             </div>
           ))}
         </div>
       </div>
-      <div className="section-divider mt-24 mx-auto max-w-2xl" />
     </section>
   );
 };

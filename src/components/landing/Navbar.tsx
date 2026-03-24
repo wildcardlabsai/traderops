@@ -14,9 +14,9 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${scrolled ? "border-border/50 bg-background/90 backdrop-blur-xl" : "border-transparent bg-transparent"}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${scrolled ? "border-border bg-background/80 backdrop-blur-xl shadow-sm" : "border-transparent bg-transparent"}`}>
       <div className="container flex h-16 items-center justify-between px-4">
-        <Link to="/" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2.5">
           <div className="h-8 w-8 rounded-lg gradient-primary flex items-center justify-center font-display font-bold text-primary-foreground text-sm">
             TO
           </div>
@@ -31,10 +31,10 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-3">
           <Link to="/login">
-            <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">Log In</Button>
+            <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground font-medium">Log In</Button>
           </Link>
           <Link to="/signup">
-            <Button size="sm" className="gradient-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity">
+            <Button size="sm" className="gradient-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity rounded-lg">
               Start Free Trial
             </Button>
           </Link>
@@ -46,14 +46,14 @@ const Navbar = () => {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-xl">
+        <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-xl">
           <div className="container px-4 py-6 space-y-4">
             <a href="#features" onClick={() => setOpen(false)} className="block font-body text-foreground py-2">Features</a>
             <a href="#pricing" onClick={() => setOpen(false)} className="block font-body text-foreground py-2">Pricing</a>
             <a href="#contact" onClick={() => setOpen(false)} className="block font-body text-foreground py-2">Contact</a>
-            <div className="pt-4 border-t border-border/50 space-y-3">
+            <div className="pt-4 border-t border-border space-y-3">
               <Link to="/login" onClick={() => setOpen(false)}>
-                <Button variant="outline" className="w-full border-border/60 text-foreground">Log In</Button>
+                <Button variant="outline" className="w-full border-border text-foreground">Log In</Button>
               </Link>
               <Link to="/signup" onClick={() => setOpen(false)}>
                 <Button className="w-full gradient-primary text-primary-foreground font-semibold">Start Free Trial</Button>

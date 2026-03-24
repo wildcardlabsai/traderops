@@ -8,22 +8,22 @@ const testimonials = [
 
 const SocialProof = () => {
   return (
-    <section className="py-24 relative">
+    <section className="py-20 md:py-32 relative">
       <div className="container relative px-4">
-        <div className="text-center mb-16">
-          <p className="text-primary font-display font-semibold text-sm tracking-[0.2em] uppercase mb-4">What dealers say</p>
-          <h2 className="font-display text-3xl md:text-4xl font-bold">
-            Built by dealers, <span className="text-primary">for dealers</span>
+        <div className="text-center mb-14 md:mb-20 max-w-2xl mx-auto">
+          <p className="text-primary font-display font-semibold text-sm tracking-[0.15em] uppercase mb-3">Testimonials</p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold leading-tight">
+            Built by dealers, <span className="text-gradient">for dealers</span>
           </h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
           {testimonials.map((t, i) => (
-            <div key={i} className="p-6 rounded-xl bg-card border border-border/50 hover:border-primary/20 card-lift">
-              <Quote className="w-8 h-8 text-primary/30 mb-4" />
+            <div key={i} className="p-7 rounded-2xl bg-card border border-border hover:border-primary/20 card-lift">
+              <Quote className="w-8 h-8 text-primary/20 mb-5" />
               <p className="font-body text-foreground mb-6 leading-relaxed">"{t.text}"</p>
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <span className="font-display text-xs font-semibold text-primary">{t.initials}</span>
+              <div className="flex items-center gap-3 pt-4 border-t border-border">
+                <div className="w-10 h-10 rounded-full bg-primary/8 flex items-center justify-center flex-shrink-0">
+                  <span className="font-display text-xs font-bold text-primary">{t.initials}</span>
                 </div>
                 <div>
                   <div className="font-display font-semibold text-foreground text-sm">{t.name}</div>
@@ -34,7 +34,6 @@ const SocialProof = () => {
           ))}
         </div>
       </div>
-      <div className="section-divider mt-24 mx-auto max-w-2xl" />
     </section>
   );
 };
