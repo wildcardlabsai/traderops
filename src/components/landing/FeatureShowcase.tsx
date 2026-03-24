@@ -9,6 +9,24 @@ const showcases = [
       { label: "Live Vehicles", value: "47" },
       { label: "Avg Margin", value: "£1,850" },
     ],
+    miniUI: (
+      <div className="mt-6 space-y-2">
+        {[
+          { name: "Ford Transit", margin: "£2,000", days: "12d", w: "65%" },
+          { name: "VW Golf", margin: "£1,700", days: "8d", w: "45%" },
+          { name: "BMW X3", margin: "£3,000", days: "5d", w: "82%" },
+        ].map((row) => (
+          <div key={row.name} className="flex items-center gap-3 text-xs font-body">
+            <span className="text-muted-foreground w-20 truncate">{row.name}</span>
+            <div className="flex-1 h-1.5 rounded-full bg-secondary overflow-hidden">
+              <div className="h-full rounded-full bg-primary/60" style={{ width: row.w }} />
+            </div>
+            <span className="text-foreground font-medium w-14 text-right">{row.margin}</span>
+            <span className="text-muted-foreground w-8 text-right">{row.days}</span>
+          </div>
+        ))}
+      </div>
+    ),
   },
   {
     icon: GitBranch,
@@ -18,6 +36,22 @@ const showcases = [
       { label: "Active Deals", value: "12" },
       { label: "This Week", value: "£34k" },
     ],
+    miniUI: (
+      <div className="mt-6 flex gap-1.5">
+        {[
+          { label: "Enquiry", count: 1, color: "bg-muted-foreground" },
+          { label: "Negotiating", count: 2, color: "bg-accent" },
+          { label: "Agreed", count: 3, color: "bg-primary" },
+          { label: "Invoiced", count: 1, color: "bg-success" },
+        ].map((stage) => (
+          <div key={stage.label} className="flex-1 text-center">
+            <div className={`h-1.5 rounded-full ${stage.color} mb-1.5`} />
+            <span className="text-[10px] font-body text-muted-foreground">{stage.label}</span>
+            <div className="font-display text-xs font-bold text-foreground">{stage.count}</div>
+          </div>
+        ))}
+      </div>
+    ),
   },
   {
     icon: ShoppingBag,
@@ -27,6 +61,16 @@ const showcases = [
       { label: "Listed", value: "230+" },
       { label: "Avg Response", value: "< 2hrs" },
     ],
+    miniUI: (
+      <div className="mt-6 space-y-2">
+        {["Ford Ranger Wildtrak", "VW Transporter T6.1", "Audi A3 Sportback"].map((v) => (
+          <div key={v} className="flex items-center justify-between px-2.5 py-1.5 rounded-md bg-secondary/50 text-xs font-body">
+            <span className="text-foreground">{v}</span>
+            <span className="text-primary font-medium">View</span>
+          </div>
+        ))}
+      </div>
+    ),
   },
   {
     icon: Megaphone,
@@ -36,6 +80,19 @@ const showcases = [
       { label: "Active Posts", value: "85" },
       { label: "Match Rate", value: "73%" },
     ],
+    miniUI: (
+      <div className="mt-6 space-y-2">
+        {[
+          { v: "Transit Custom 2020+", matches: 3 },
+          { v: "Golf Mk8 1.5 TSI", matches: 1 },
+        ].map((p) => (
+          <div key={p.v} className="flex items-center justify-between px-2.5 py-1.5 rounded-md bg-secondary/50 text-xs font-body">
+            <span className="text-foreground">{p.v}</span>
+            <span className="text-success font-medium">{p.matches} matches</span>
+          </div>
+        ))}
+      </div>
+    ),
   },
 ];
 
@@ -43,7 +100,7 @@ const FeatureShowcase = () => {
   return (
     <section className="py-24 relative">
       <div className="absolute inset-0 grid-bg opacity-20" />
-      <div className="container relative">
+      <div className="container relative px-4">
         <div className="text-center mb-16">
           <h2 className="font-display text-3xl md:text-5xl font-bold">
             Everything you need,{" "}
@@ -71,12 +128,7 @@ const FeatureShowcase = () => {
               </div>
               <h3 className="font-display text-xl font-semibold text-foreground mb-2">{item.title}</h3>
               <p className="font-body text-muted-foreground">{item.desc}</p>
-              {/* Fake UI preview bar */}
-              <div className="mt-6 flex gap-2">
-                {[...Array(5)].map((_, k) => (
-                  <div key={k} className="h-8 rounded-md bg-secondary flex-1" style={{ opacity: 1 - k * 0.15 }} />
-                ))}
-              </div>
+              {item.miniUI}
             </div>
           ))}
         </div>

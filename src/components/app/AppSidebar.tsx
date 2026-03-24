@@ -1,9 +1,10 @@
 import {
   LayoutDashboard, Package, ShoppingBag, Search, GitBranch,
-  Users, Truck, FileText, Bell, LogOut
+  Users, Truck, FileText, Bell, LogOut, Settings
 } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
-import { useLocation, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useAuth } from "@/contexts/AuthContext";
 import {
   Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent,
   SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarFooter, useSidebar,
@@ -23,7 +24,12 @@ const items = [
 
 const AppSidebar = () => {
   const { state } = useSidebar();
+  const { signOut, user } = useAuth();
   const collapsed = state === "collapsed";
+
+  const initials = user?.user_metadata?.company_name
+    ? user.user_metadata.company_name.slice(0, 2).toUpperCase()
+    : user?.email?.slice(0, 2).toUpperCase() || "TO";
 
   return (
     <Sidebar collapsible="icon" className="border-r border-border/50">
@@ -58,11 +64,18 @@ const AppSidebar = () => {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter className="border-t border-border/50 p-2">
-        <Link to="/" className="flex items-center gap-2 px-3 py-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-colors">
-          <LogOut className="w-4 h-4 flex-shrink-0" />
-          {!collapsed && <span className="font-body text-sm">Back to Site</span>}
+      <SidebarFooter className="border-t border-border/50 p-2 space-y-1">
+        <Link to="/app/settings" className="flex items-center gap-2 px-3 py-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-colors">
+          <Settings className="w-4 h-4 flex-shrink-0" />
+          {!collapsed && <span className="font-body text-sm">Settings</span>}
         </Link>
+        <button
+          onClick={signOut}
+          className="w-full flex items-center gap-2 px-3 py-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-colors"
+        >
+          <LogOut className="w-4 h-4 flex-shrink-0" />
+          {!collapsed && <span className="font-body text-sm">Sign Out</span>}
+        </button>
       </SidebarFooter>
     </Sidebar>
   );
