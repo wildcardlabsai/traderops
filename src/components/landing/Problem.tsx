@@ -34,19 +34,20 @@ const Problem = () => {
           {problems.map((problem, i) => (
             <div
               key={i}
-              className="flex items-start gap-3 p-5 rounded-xl bg-card border border-border/50 hover:border-destructive/30 transition-colors"
+              className="flex items-start gap-3 p-6 rounded-xl bg-card border border-border/50 hover:border-destructive/40 card-lift"
             >
               <div className="mt-0.5 w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0">
                 <X className="w-3.5 h-3.5 text-destructive" />
               </div>
               <div>
                 <h3 className="font-display font-semibold text-foreground mb-1">{problem.title}</h3>
-                <p className="font-body text-sm text-muted-foreground">{problem.desc}</p>
+                <p className="font-body text-sm text-muted-foreground leading-relaxed">{problem.desc}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
+      <div className="section-divider mt-24 mx-auto max-w-2xl" />
     </section>
   );
 };

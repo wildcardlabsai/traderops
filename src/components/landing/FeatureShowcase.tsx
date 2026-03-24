@@ -111,7 +111,7 @@ const FeatureShowcase = () => {
           {showcases.map((item, i) => (
             <div
               key={i}
-              className="group p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-300"
+              className={`group p-8 rounded-2xl border border-border/50 hover:border-primary/30 card-lift ${i % 2 === 1 ? "bg-card" : "bg-gradient-to-br from-card to-secondary/30"}`}
             >
               <div className="flex items-start justify-between mb-6">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -133,6 +133,7 @@ const FeatureShowcase = () => {
           ))}
         </div>
       </div>
+      <div className="section-divider mt-24 mx-auto max-w-2xl" />
     </section>
   );
 };

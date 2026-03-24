@@ -13,23 +13,24 @@ const Benefits = () => {
       <div className="absolute inset-0 grid-bg opacity-20" />
       <div className="container relative px-4">
         <div className="text-center mb-16">
-          <p className="text-primary font-display font-semibold text-sm tracking-widest uppercase mb-4">Why TraderOps</p>
+          <p className="text-primary font-display font-semibold text-sm tracking-[0.2em] uppercase mb-4">Why TraderOps</p>
           <h2 className="font-display text-3xl md:text-5xl font-bold">
             Built to help you <span className="text-primary">win more deals</span>
           </h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((b, i) => (
-            <div key={i} className="text-center p-6 rounded-xl border border-border/30 hover:border-primary/20 transition-colors">
+            <div key={i} className="text-center p-6 rounded-xl border border-border/30 hover:border-primary/20 card-lift bg-card/50">
               <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <b.icon className="w-7 h-7 text-primary" />
               </div>
               <h3 className="font-display text-lg font-semibold text-foreground mb-2">{b.title}</h3>
-              <p className="font-body text-sm text-muted-foreground">{b.desc}</p>
+              <p className="font-body text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
             </div>
           ))}
         </div>
       </div>
+      <div className="section-divider mt-24 mx-auto max-w-2xl" />
     </section>
   );
 };

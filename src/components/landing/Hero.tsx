@@ -1,19 +1,30 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Play } from "lucide-react";
+import { Play, ChevronDown } from "lucide-react";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* CSS-only cinematic background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-[hsl(216,28%,9%)] to-background" />
-      <div className="absolute inset-0 grid-bg opacity-30" />
+      {/* Hero background image */}
+      <img
+        src={heroBg}
+        alt=""
+        width={1920}
+        height={1080}
+        className="absolute inset-0 w-full h-full object-cover opacity-20"
+      />
+
+      {/* Dark overlay gradients */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/90" />
+      <div className="absolute inset-0 grid-bg opacity-20" />
 
       {/* Animated glow orbs */}
       <div className="absolute top-1/4 left-1/4 w-[200px] md:w-[400px] h-[200px] md:h-[400px] bg-primary/8 rounded-full blur-[120px] animate-pulse-glow" />
       <div className="absolute bottom-1/3 right-1/4 w-[150px] md:w-[300px] h-[150px] md:h-[300px] bg-accent/5 rounded-full blur-[100px] animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
 
-      <div className="container relative z-10 text-center pt-24 pb-16 px-5">
+      <div className="container relative z-10 text-center pt-24 pb-24 px-5">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 mb-8 opacity-0 animate-fade-in">
           <div className="w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
           <span className="text-sm font-body text-primary">500+ dealers already trading</span>
@@ -24,7 +35,7 @@ const Hero = () => {
           <span className="text-primary glow-text">Trade</span>, Not Retail
         </h1>
 
-        <p className="font-body text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 opacity-0 animate-fade-in-delay-2">
+        <p className="font-body text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed opacity-0 animate-fade-in-delay-2">
           Manage stock, source vehicles, and close deals faster with a platform designed for the trade.
         </p>
 
@@ -48,6 +59,11 @@ const Hero = () => {
           <span className="hidden sm:inline">•</span>
           <span>✓ Cancel anytime</span>
         </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in-delay-3">
+        <ChevronDown className="w-5 h-5 text-muted-foreground animate-float" />
       </div>
     </section>
   );

@@ -1,13 +1,20 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
+    <nav className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${scrolled ? "border-border/50 bg-background/90 backdrop-blur-xl" : "border-transparent bg-transparent"}`}>
       <div className="container flex h-16 items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-2">
           <div className="h-8 w-8 rounded-lg gradient-primary flex items-center justify-center font-display font-bold text-primary-foreground text-sm">
@@ -33,13 +40,11 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Mobile menu toggle */}
         <button onClick={() => setOpen(!open)} className="md:hidden text-foreground p-2">
           {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
-      {/* Mobile drawer */}
       {open && (
         <div className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-xl">
           <div className="container px-4 py-6 space-y-4">
