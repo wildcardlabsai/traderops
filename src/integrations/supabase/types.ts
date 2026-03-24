@@ -14,7 +14,198 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      contacts: {
+        Row: {
+          company_name: string
+          contact_name: string | null
+          created_at: string
+          email: string | null
+          id: string
+          location: string | null
+          notes: string | null
+          phone: string | null
+          type: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          company_name: string
+          contact_name?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          location?: string | null
+          notes?: string | null
+          phone?: string | null
+          type?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          company_name?: string
+          contact_name?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          location?: string | null
+          notes?: string | null
+          phone?: string | null
+          type?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      deals: {
+        Row: {
+          contact_id: string | null
+          created_at: string
+          id: string
+          notes: string | null
+          party_name: string
+          stage: string
+          updated_at: string
+          user_id: string
+          value: number | null
+          vehicle_id: string | null
+          vehicle_name: string
+        }
+        Insert: {
+          contact_id?: string | null
+          created_at?: string
+          id?: string
+          notes?: string | null
+          party_name: string
+          stage?: string
+          updated_at?: string
+          user_id: string
+          value?: number | null
+          vehicle_id?: string | null
+          vehicle_name: string
+        }
+        Update: {
+          contact_id?: string | null
+          created_at?: string
+          id?: string
+          notes?: string | null
+          party_name?: string
+          stage?: string
+          updated_at?: string
+          user_id?: string
+          value?: number | null
+          vehicle_id?: string | null
+          vehicle_name?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "deals_contact_id_fkey"
+            columns: ["contact_id"]
+            isOneToOne: false
+            referencedRelation: "contacts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "deals_vehicle_id_fkey"
+            columns: ["vehicle_id"]
+            isOneToOne: false
+            referencedRelation: "vehicles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          company_name: string | null
+          created_at: string
+          id: string
+          location: string | null
+          phone: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          company_name?: string | null
+          created_at?: string
+          id?: string
+          location?: string | null
+          phone?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          company_name?: string | null
+          created_at?: string
+          id?: string
+          location?: string | null
+          phone?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      vehicles: {
+        Row: {
+          asking_price: number | null
+          colour: string | null
+          cost_price: number | null
+          created_at: string
+          days_in_stock: number | null
+          fuel_type: string | null
+          id: string
+          make: string
+          mileage: number | null
+          model: string
+          notes: string | null
+          registration: string | null
+          status: string
+          transmission: string | null
+          updated_at: string
+          urgent: boolean | null
+          user_id: string
+          year: number
+        }
+        Insert: {
+          asking_price?: number | null
+          colour?: string | null
+          cost_price?: number | null
+          created_at?: string
+          days_in_stock?: number | null
+          fuel_type?: string | null
+          id?: string
+          make: string
+          mileage?: number | null
+          model: string
+          notes?: string | null
+          registration?: string | null
+          status?: string
+          transmission?: string | null
+          updated_at?: string
+          urgent?: boolean | null
+          user_id: string
+          year: number
+        }
+        Update: {
+          asking_price?: number | null
+          colour?: string | null
+          cost_price?: number | null
+          created_at?: string
+          days_in_stock?: number | null
+          fuel_type?: string | null
+          id?: string
+          make?: string
+          mileage?: number | null
+          model?: string
+          notes?: string | null
+          registration?: string | null
+          status?: string
+          transmission?: string | null
+          updated_at?: string
+          urgent?: boolean | null
+          user_id?: string
+          year?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
