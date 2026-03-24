@@ -21,8 +21,8 @@ const Hero = () => {
       <div className="absolute inset-0 bg-dot-pattern opacity-40" />
 
       {/* Decorative blobs */}
-      <div className="absolute top-20 right-[10%] w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-primary/[0.04] rounded-full blur-[100px]" />
-      <div className="absolute bottom-20 left-[10%] w-[200px] md:w-[400px] h-[200px] md:h-[400px] bg-accent/[0.04] rounded-full blur-[80px]" />
+      <div className="absolute top-20 right-[10%] w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-primary/[0.07] rounded-full blur-[100px]" />
+      <div className="absolute bottom-20 left-[10%] w-[200px] md:w-[400px] h-[200px] md:h-[400px] bg-accent/[0.05] rounded-full blur-[80px]" />
 
       <div className="container relative z-10 text-center pt-28 pb-20 px-5">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/[0.06] mb-10 opacity-0 animate-fade-in">
