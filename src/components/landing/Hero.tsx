@@ -13,7 +13,7 @@ const Hero = () => {
         <div className="absolute inset-0 grid-bg opacity-30" />
       </div>
 
-      {/* Glow effect */}
+      {/* Glow effect - hidden on mobile to prevent overflow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/10 rounded-full blur-[120px] animate-pulse-glow" />
 
       <div className="container relative z-10 text-center pt-24 pb-16">
