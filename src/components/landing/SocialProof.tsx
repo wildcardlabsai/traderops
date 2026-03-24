@@ -9,16 +9,16 @@ const testimonials = [
 const SocialProof = () => {
   return (
     <section className="py-24 relative">
-      <div className="container relative">
+      <div className="container relative px-4">
         <div className="text-center mb-16">
-          <p className="text-primary font-display font-semibold text-sm tracking-widest uppercase mb-4">Social Proof</p>
+          <p className="text-primary font-display font-semibold text-sm tracking-widest uppercase mb-4">What dealers say</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold">
             Built by dealers, <span className="text-primary">for dealers</span>
           </h2>
         </div>
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {testimonials.map((t, i) => (
-            <div key={i} className="p-6 rounded-xl bg-card border border-border/50">
+            <div key={i} className="p-6 rounded-xl bg-card border border-border/50 hover:border-primary/20 transition-colors">
               <Quote className="w-8 h-8 text-primary/30 mb-4" />
               <p className="font-body text-foreground mb-6 leading-relaxed">"{t.text}"</p>
               <div>

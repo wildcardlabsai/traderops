@@ -3,8 +3,14 @@ import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import AppSidebar from "@/components/app/AppSidebar";
 import { Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/contexts/AuthContext";
 
 const AppLayout = () => {
+  const { user } = useAuth();
+  const initials = user?.user_metadata?.company_name
+    ? user.user_metadata.company_name.slice(0, 2).toUpperCase()
+    : user?.email?.slice(0, 2).toUpperCase() || "TO";
+
   return (
     <SidebarProvider>
       <div className="min-h-screen flex w-full bg-background">
@@ -18,7 +24,7 @@ const AppLayout = () => {
                 <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-accent" />
               </Button>
               <div className="w-8 h-8 rounded-full gradient-primary flex items-center justify-center text-xs font-display font-bold text-primary-foreground">
-                JD
+                {initials}
               </div>
             </div>
           </header>
