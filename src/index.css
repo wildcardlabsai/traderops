@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,50 +6,50 @@
 
 @layer base {
   :root {
-    --background: 216 28% 7%;
-    --foreground: 210 15% 93%;
+    --background: 0 0% 100%;
+    --foreground: 220 20% 12%;
 
-    --card: 216 25% 10%;
-    --card-foreground: 210 15% 93%;
+    --card: 0 0% 99%;
+    --card-foreground: 220 20% 12%;
 
-    --popover: 216 25% 10%;
-    --popover-foreground: 210 15% 93%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 12%;
 
-    --primary: 190 100% 50%;
-    --primary-foreground: 216 28% 7%;
+    --primary: 190 80% 42%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 216 20% 14%;
-    --secondary-foreground: 210 15% 93%;
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 220 20% 12%;
 
-    --muted: 216 20% 14%;
-    --muted-foreground: 215 15% 60%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 15% 46%;
 
-    --accent: 38 92% 55%;
-    --accent-foreground: 216 28% 7%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 216 20% 18%;
-    --input: 216 20% 18%;
-    --ring: 190 100% 50%;
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 190 80% 42%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 216 25% 8%;
-    --sidebar-foreground: 210 20% 80%;
-    --sidebar-primary: 190 100% 50%;
-    --sidebar-primary-foreground: 216 28% 7%;
-    --sidebar-accent: 216 20% 14%;
-    --sidebar-accent-foreground: 210 15% 93%;
-    --sidebar-border: 216 20% 15%;
-    --sidebar-ring: 190 100% 50%;
+    --sidebar-background: 210 25% 98%;
+    --sidebar-foreground: 220 15% 30%;
+    --sidebar-primary: 190 80% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 94%;
+    --sidebar-accent-foreground: 220 20% 12%;
+    --sidebar-border: 214 20% 92%;
+    --sidebar-ring: 190 80% 42%;
 
-    --surface: 216 22% 12%;
-    --surface-hover: 216 22% 16%;
-    --glow: 190 100% 50%;
-    --success: 142 71% 45%;
-    --warning: 38 92% 55%;
+    --surface: 210 20% 97%;
+    --surface-hover: 210 20% 94%;
+    --glow: 190 80% 42%;
+    --success: 142 71% 40%;
+    --warning: 38 92% 50%;
   }
 }
 
@@ -61,47 +61,47 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Outfit', sans-serif;
   }
 }
 
 @layer utilities {
   .font-display {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Outfit', sans-serif;
   }
   .font-body {
     font-family: 'Inter', sans-serif;
   }
   .glow-text {
-    text-shadow: 0 0 20px hsl(190 100% 50% / 0.4), 0 0 40px hsl(190 100% 50% / 0.2);
+    color: hsl(190 80% 38%);
   }
   .glow-border {
-    box-shadow: 0 0 15px hsl(190 100% 50% / 0.15), inset 0 0 15px hsl(190 100% 50% / 0.05);
+    box-shadow: 0 0 15px hsl(190 80% 42% / 0.1), inset 0 0 15px hsl(190 80% 42% / 0.03);
   }
   .glow-box {
-    box-shadow: 0 0 30px hsl(190 100% 50% / 0.2), 0 0 60px hsl(190 100% 50% / 0.1);
+    box-shadow: 0 4px 20px hsl(190 80% 42% / 0.15);
   }
   .grid-bg {
     background-image: 
-      linear-gradient(hsl(216 20% 18% / 0.3) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(216 20% 18% / 0.3) 1px, transparent 1px);
+      linear-gradient(hsl(214 20% 90% / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(214 20% 90% / 0.5) 1px, transparent 1px);
     background-size: 60px 60px;
   }
   .gradient-primary {
-    background: linear-gradient(135deg, hsl(190 100% 50%), hsl(200 100% 60%));
+    background: linear-gradient(135deg, hsl(190 80% 42%), hsl(200 80% 50%));
   }
   .gradient-surface {
-    background: linear-gradient(180deg, hsl(216 22% 12%), hsl(216 25% 10%));
+    background: linear-gradient(180deg, hsl(210 20% 97%), hsl(0 0% 99%));
   }
   .section-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, hsl(216 20% 22%), transparent);
+    background: linear-gradient(90deg, transparent, hsl(214 20% 88%), transparent);
   }
   .card-lift {
     @apply transition-all duration-300;
   }
   .card-lift:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px hsl(216 28% 7% / 0.5);
+    box-shadow: 0 8px 25px hsl(220 20% 12% / 0.08);
   }
 }
