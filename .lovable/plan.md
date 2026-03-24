@@ -1,59 +1,38 @@
 
 
-# Switch to Light Mode + Outfit Font
+# Add App Screenshots to Landing Page
 
-## Overview
-Convert the entire app from dark mode to light mode and replace Space Grotesk with Outfit as the display font. This touches the global CSS variables, font imports, Tailwind config, and utility classes across all components.
+## Approach
+Build a new `AppPreview` component that renders a realistic, static mockup of the dashboard inside a browser-frame wrapper. This gives the landing page a polished product shot without needing to log in or take actual screenshots. The mockup will use hardcoded sample data styled identically to the real app pages (same classes, same layout).
 
-## What Changes
+## What gets built
 
-### 1. Global CSS (`src/index.css`)
-- Replace Google Fonts import: swap `Space+Grotesk` for `Outfit`
-- Rewrite all CSS variables for a light palette:
-  - `--background`: white/near-white (~0 0% 100%)
-  - `--foreground`: dark charcoal (~220 20% 12%)
-  - `--card`: white with very subtle grey
-  - `--primary`: keep the teal/cyan hue but slightly deeper for contrast on white
-  - `--muted`: light greys
-  - `--border`: light grey borders
-  - `--sidebar-*`: light sidebar palette
-  - `--surface`, `--glow`, `--success`, `--warning`: adjusted for light backgrounds
-- Update heading font-family references from `Space Grotesk` to `Outfit`
-- Update `.font-display` utility
-- Adjust glow/shadow utilities to use softer, lighter shadows instead of dark-mode glows
-- Update `.grid-bg`, `.gradient-surface`, `.card-lift` hover shadows for light mode
-- Remove or tone down `.glow-text` (text-shadow doesn't work well on light backgrounds)
+### 1. New component: `src/components/landing/AppPreview.tsx`
+A static recreation of the dashboard view inside a macOS-style browser chrome:
+- **Browser frame**: rounded corners, 3 traffic-light dots (red/yellow/green), a URL bar showing "traderops.app/dashboard", subtle drop shadow
+- **Sidebar mockup**: condensed version of AppSidebar with the TO logo, nav items (Dashboard highlighted, Stock, Deals, Contacts), and group labels
+- **Dashboard content**: 4 stat cards (Live Stock: 47, Active Deals: 12, Pipeline Value: £34,200, Urgent Stock: 3) with icons, plus a "Recent Deals" table with 4-5 sample rows showing vehicle names, parties, stages (with colored badges), and values
+- All styled with the same Tailwind classes used in the real app (font-display, font-body, gradient-primary, bg-card, etc.)
 
-### 2. Tailwind Config (`tailwind.config.ts`)
-- Update `fontFamily.display` from `Space Grotesk` to `Outfit`
+### 2. Update `Hero.tsx`
+Add the `AppPreview` component below the trust bar, inside a container with:
+- Perspective/tilt effect via CSS transform for depth
+- Fade-in animation matching the existing delay sequence
+- Max width ~1100px, centered
 
-### 3. HTML (`index.html`)
-- Remove `class="dark"` from `<html>` tag
+### 3. Update `FeatureShowcase.tsx`
+Replace the current mini-UI mockups with slightly more detailed inline previews that better represent the actual app screens (Stock table rows, Deal pipeline columns). Keep the card-based layout but make the previews feel more like real screenshots.
 
-### 4. Hero Section (`src/components/landing/Hero.tsx`)
-- Adjust overlay gradients to use white-based fades instead of dark background fades
-- Increase hero image opacity slightly since the overlay is now lighter
-- Adjust glow orb colours for light mode visibility
+## Files to create/modify
+- **Create**: `src/components/landing/AppPreview.tsx` — browser-frame dashboard mockup
+- **Edit**: `src/components/landing/Hero.tsx` — embed AppPreview below CTA
+- **Edit**: `src/components/landing/FeatureShowcase.tsx` — enhance mini-UI previews
 
-### 5. Landing Page Components
-All components already use semantic CSS variable classes (`bg-background`, `text-foreground`, `bg-card`, etc.) so they'll automatically adapt. Minor tweaks needed:
-- **Navbar**: gradient on scroll uses light bg
-- **Problem/Solution/Benefits/FeatureShowcase/Pricing/SocialProof/FinalCTA/Footer**: review `gradient-primary` button contrast, ensure `text-primary` is readable on white
-
-### 6. App Components
-- **AppSidebar**: sidebar colours adapt via CSS vars; `gradient-primary` logo stays
-- **AppLayout**: header backdrop adapts
-- **Dashboard, Stock, Contacts, Deals, Wanted, Movements, Documents**: all use semantic classes, should adapt automatically
-
-### 7. Auth Pages (Login, Signup, ForgotPassword, ResetPassword)
-- Replace `font-display` references from Space Grotesk → Outfit (handled by CSS)
-- Backgrounds adapt via CSS vars
-
-## Files to Modify
-- `index.html` — remove `dark` class
-- `src/index.css` — new light palette + Outfit font import
-- `tailwind.config.ts` — Outfit in fontFamily
-- `src/components/landing/Hero.tsx` — light overlay gradients
-
-All other files use semantic Tailwind classes and will adapt automatically.
+## Sample data (no gibberish)
+All data will use realistic UK trade dealer examples:
+- Vehicles: Ford Transit Custom, VW Golf GTI, BMW 3 Series, Audi A4 Avant, Mercedes Sprinter
+- Parties: Phoenix Motors, Greenfield Autos, Apex Car Group, Summit Trade Sales
+- Stages: Enquiry, Negotiating, Agreed, Invoiced
+- Values: £8,500 – £28,000 range
+- Registrations: realistic UK format (e.g. YR71 MXD)
 
