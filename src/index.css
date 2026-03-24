@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,49 +7,49 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 20% 12%;
+    --foreground: 220 25% 10%;
 
-    --card: 0 0% 99%;
-    --card-foreground: 220 20% 12%;
+    --card: 210 20% 98%;
+    --card-foreground: 220 25% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 12%;
+    --popover-foreground: 220 25% 10%;
 
-    --primary: 190 80% 42%;
+    --primary: 190 80% 38%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 220 20% 12%;
+    --secondary: 210 25% 95%;
+    --secondary-foreground: 220 25% 10%;
 
     --muted: 210 20% 96%;
     --muted-foreground: 215 15% 46%;
 
-    --accent: 38 92% 50%;
+    --accent: 25 95% 53%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 20% 90%;
-    --input: 214 20% 90%;
-    --ring: 190 80% 42%;
+    --border: 214 20% 91%;
+    --input: 214 20% 91%;
+    --ring: 190 80% 38%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 210 25% 98%;
     --sidebar-foreground: 220 15% 30%;
-    --sidebar-primary: 190 80% 42%;
+    --sidebar-primary: 190 80% 38%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 210 20% 94%;
-    --sidebar-accent-foreground: 220 20% 12%;
+    --sidebar-accent-foreground: 220 25% 10%;
     --sidebar-border: 214 20% 92%;
-    --sidebar-ring: 190 80% 42%;
+    --sidebar-ring: 190 80% 38%;
 
-    --surface: 210 20% 97%;
+    --surface: 210 25% 97%;
     --surface-hover: 210 20% 94%;
-    --glow: 190 80% 42%;
-    --success: 142 71% 40%;
-    --warning: 38 92% 50%;
+    --glow: 190 80% 38%;
+    --success: 152 60% 42%;
+    --warning: 25 95% 53%;
   }
 }
 
@@ -73,25 +73,25 @@
     font-family: 'Inter', sans-serif;
   }
   .glow-text {
-    color: hsl(190 80% 38%);
+    color: hsl(190 80% 34%);
   }
   .glow-border {
-    box-shadow: 0 0 15px hsl(190 80% 42% / 0.1), inset 0 0 15px hsl(190 80% 42% / 0.03);
+    box-shadow: 0 0 0 1px hsl(190 80% 38% / 0.15), 0 4px 16px hsl(190 80% 38% / 0.08);
   }
   .glow-box {
-    box-shadow: 0 4px 20px hsl(190 80% 42% / 0.15);
+    box-shadow: 0 4px 20px hsl(190 80% 38% / 0.2), 0 1px 3px hsl(190 80% 38% / 0.1);
   }
   .grid-bg {
     background-image: 
-      linear-gradient(hsl(214 20% 90% / 0.5) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(214 20% 90% / 0.5) 1px, transparent 1px);
+      linear-gradient(hsl(214 20% 92% / 0.6) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(214 20% 92% / 0.6) 1px, transparent 1px);
     background-size: 60px 60px;
   }
   .gradient-primary {
-    background: linear-gradient(135deg, hsl(190 80% 42%), hsl(200 80% 50%));
+    background: linear-gradient(135deg, hsl(190 80% 38%), hsl(195 75% 45%));
   }
   .gradient-surface {
-    background: linear-gradient(180deg, hsl(210 20% 97%), hsl(0 0% 99%));
+    background: linear-gradient(180deg, hsl(210 25% 97%), hsl(0 0% 100%));
   }
   .section-divider {
     height: 1px;
@@ -101,7 +101,17 @@
     @apply transition-all duration-300;
   }
   .card-lift:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px hsl(220 20% 12% / 0.08);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px hsl(220 25% 10% / 0.08), 0 4px 8px hsl(220 25% 10% / 0.04);
+  }
+  .bg-dot-pattern {
+    background-image: radial-gradient(hsl(214 20% 85% / 0.5) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(190 80% 34%), hsl(195 75% 42%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
