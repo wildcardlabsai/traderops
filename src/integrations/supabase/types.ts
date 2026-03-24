@@ -113,6 +113,101 @@ export type Database = {
           },
         ]
       }
+      documents: {
+        Row: {
+          amount: number | null
+          created_at: string
+          doc_date: string
+          doc_type: string
+          id: string
+          name: string
+          notes: string | null
+          party_name: string | null
+          updated_at: string
+          user_id: string
+          vehicle_name: string | null
+        }
+        Insert: {
+          amount?: number | null
+          created_at?: string
+          doc_date?: string
+          doc_type?: string
+          id?: string
+          name: string
+          notes?: string | null
+          party_name?: string | null
+          updated_at?: string
+          user_id: string
+          vehicle_name?: string | null
+        }
+        Update: {
+          amount?: number | null
+          created_at?: string
+          doc_date?: string
+          doc_type?: string
+          id?: string
+          name?: string
+          notes?: string | null
+          party_name?: string | null
+          updated_at?: string
+          user_id?: string
+          vehicle_name?: string | null
+        }
+        Relationships: []
+      }
+      movements: {
+        Row: {
+          created_at: string
+          driver: string | null
+          from_location: string
+          id: string
+          notes: string | null
+          scheduled_date: string | null
+          status: string
+          to_location: string
+          updated_at: string
+          user_id: string
+          vehicle_id: string | null
+          vehicle_name: string
+        }
+        Insert: {
+          created_at?: string
+          driver?: string | null
+          from_location: string
+          id?: string
+          notes?: string | null
+          scheduled_date?: string | null
+          status?: string
+          to_location: string
+          updated_at?: string
+          user_id: string
+          vehicle_id?: string | null
+          vehicle_name: string
+        }
+        Update: {
+          created_at?: string
+          driver?: string | null
+          from_location?: string
+          id?: string
+          notes?: string | null
+          scheduled_date?: string | null
+          status?: string
+          to_location?: string
+          updated_at?: string
+          user_id?: string
+          vehicle_id?: string | null
+          vehicle_name?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "movements_vehicle_id_fkey"
+            columns: ["vehicle_id"]
+            isOneToOne: false
+            referencedRelation: "vehicles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           company_name: string | null
@@ -203,6 +298,42 @@ export type Database = {
           urgent?: boolean | null
           user_id?: string
           year?: number
+        }
+        Relationships: []
+      }
+      wanted_posts: {
+        Row: {
+          budget: string | null
+          created_at: string
+          id: string
+          matches: number
+          notes: string | null
+          status: string
+          updated_at: string
+          user_id: string
+          vehicle_description: string
+        }
+        Insert: {
+          budget?: string | null
+          created_at?: string
+          id?: string
+          matches?: number
+          notes?: string | null
+          status?: string
+          updated_at?: string
+          user_id: string
+          vehicle_description: string
+        }
+        Update: {
+          budget?: string | null
+          created_at?: string
+          id?: string
+          matches?: number
+          notes?: string | null
+          status?: string
+          updated_at?: string
+          user_id?: string
+          vehicle_description?: string
         }
         Relationships: []
       }
